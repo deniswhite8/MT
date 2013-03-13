@@ -1,0 +1,15 @@
+td {
+	background-color: #ddd;
+	border: 1px solid black;
+	min-width: 20px;
+	min-height: 20px;
+	text-align: center;
+}
+
+#tape {
+	overflow: auto;
+}
+
+.selected {
+	background-color: red;
+}
