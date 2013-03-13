@@ -13,3 +13,7 @@ td {
 .selected {
 	background-color: red;
 }
+
+textarea {
+	display: block;
+}
