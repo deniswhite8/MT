@@ -8,6 +8,10 @@ $(document).ready(function(){
 	row.children().eq(head).addClass("selected");
 	
 	$("#ok").click(function() {
+		head = 1;
+		map = {};
+		state = 0;
+	
 		var text = $("#string").val();
 		
 		row.empty();
@@ -20,30 +24,45 @@ $(document).ready(function(){
 	});
 	
 	$("#run").click(function() {
+		head = 1;
+		map = {};
+		state = 0;
 		var commands = $("#commands").val().replace(/ /g,'').split("\n");
 		for(var i = 0; i < commands.length; i++)
 		{
 			var mas = commands[i].split("->");
 			
-			mas2 = mas[1].split("q");
-			var _move = mas2[1][mas2[1].length-1];
-			mas2[1] = mas2[1].slice(0, -1);
-			var ch2 = mas2[0];
-			var n2 = mas2[1];
+			var move1 = mas[1][mas[1].length-1];
+			mas[1] = mas[1].substr(0, mas[1].length-1);
 			
-			map[mas[0]] = {n:n2, ch:ch2, move:_move};
+			var ch1 = mas[1][mas[1].length-1];
+			mas[1] = mas[1].substr(0, mas[1].length-1);
+			
+			mas[1] = mas[1].substr(1);
+			var n1 = mas[1];
+			
+			map[mas[0]] = {n:n1, ch:ch1, move:move1};
 		}
 		
 		while(state != "z")
 		{
 			var ch = row.children().eq(head).text();
-			var next = map[ch+"q"+state];
+			var next = map["q"+state+ch];
 			if(next === undefined) alert("Not next instruction!");
 			state = next.n;
 			row.children().eq(head).text(next.ch);
 			row.children().eq(head).removeClass("selected");
-			if(next.move == "R") head++;
-			else if(next.move == "L") head--;
+			if(next.move == "R") 
+			{
+				head++;
+				if(head == row.children().length-1) row.children().eq(head).after("<td>&lambda;</td>");
+			}
+			else if(next.move == "L")
+			{
+				head--;
+				if(head == 0) row.children().eq(head).before("<td>&lambda;</td>");
+				head = 1;
+			}
 			else if(next.move != "E") alert("R, L or E!");
 			row.children().eq(head).addClass("selected");
 		}
