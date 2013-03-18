@@ -114,6 +114,7 @@ $(document).ready(function(){
 			}
 		}
 		else if(next.move != "E") alert("R, L or E!");
+		
 		row.children().eq(head).addClass("selected");
 	}
 	
