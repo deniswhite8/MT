@@ -2,6 +2,7 @@ var head = 1;
 var map = {};
 var state = 0;
 var running = false;
+var delay = 500;
 
 $(document).ready(function(){
 
@@ -30,15 +31,20 @@ $(document).ready(function(){
 		row.children().eq(head).addClass("selected");
 	}
 	
+	function reset()
+	{
+		running = false;
+		$("#ok").removeAttr("disabled");
+		$("#string").removeAttr("disabled");
+		$("#commands").removeAttr("disabled");
+		$("#run").attr('value', 'Старт');
+		init();
+	}
+	
 	$("#run").click(function() {
 		if(running)
 		{
-			running = false;
-			$("#ok").removeAttr("disabled");
-			$("#string").removeAttr("disabled");
-			$("#commands").removeAttr("disabled");
-			$("#run").attr('value', 'Старт');
-			init();
+			reset();
 		}
 		else
 		{
@@ -67,7 +73,7 @@ $(document).ready(function(){
 				map[mas[0]] = {n:n1, ch:ch1, move:move1};
 			}
 		
-			setTimeout(run, 1000);
+			setTimeout(run, delay);
 		}
 		
 	});
@@ -77,7 +83,11 @@ $(document).ready(function(){
 		if(state != "z" && running)
 		{
 			step();
-			setTimeout(run, 1000);
+			setTimeout(run, delay);
+		}
+		else if(state == "z")
+		{
+			alert("Машина удачно закончила свою работу в состоянии qz");
 		}
 	}
 
