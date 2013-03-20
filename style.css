@@ -1,0 +1,22 @@
+td {
+	background-color: #ddd;
+	border: 1px solid black;
+	min-width: 20px;
+	min-height: 20px;
+	text-align: center;
+}
+
+#tape {
+	overflow: auto;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.selected {
+	background-color: red;
+}
+
+textarea {
+	display: block;
+	height: 100px;
+}
