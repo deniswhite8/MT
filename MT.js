@@ -57,7 +57,7 @@ $(document).ready(function(){
 				
 				ins = true;
 				
-				if(!(/^q\d+\S->q[z\d]+\S[RLE]$/.test(commands[i])))
+				if(!(/^q\d+\S->q([z]|[\d]+)\S[RLE]$/.test(commands[i])))
 				{
 					alert("incorrect instruction: " + commands[i]);
 					return;
