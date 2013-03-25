@@ -8,8 +8,9 @@ td {
 
 #tape {
 	overflow: auto;
-	margin-left: auto;
-    margin-right: auto;
+    background: gray;
+    padding: 10px;
+	margin: 10px;
 }
 
 .selected {
@@ -19,4 +20,25 @@ td {
 textarea {
 	display: block;
 	height: 100px;
+	width: 200px;
+	min-width: 200px;
+	max-width: 200px;
+}
+
+#string {
+	width: 200px;
+}
+
+#control {
+	padding: 10px;
+	margin: 10px;
+	background: gray;
+	float: left;
+}
+
+#table {
+	padding: 10px;
+	margin: 10px;
+	background: gray;
+	float: left;
 }
