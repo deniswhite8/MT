@@ -1,9 +1,10 @@
 body {
-	background: url(black-stripe.gif) #282828;
+	background: #e6e6e6; /*url(black-stripe.gif) #282828;*/
+	color: #515151;
 }
 
 td {
-	border: 1px solid black;
+	border: 1px solid #515151;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
@@ -13,13 +14,14 @@ td {
 
 #tape {
 	overflow: auto;
-    background: gray;
+    background: #fff;
     padding: 10px;
 	margin: 10px;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 .selected {
-	background-color: black;
+	background-color: #515151;
 	color: white;
 	font-weight: bold;
 }
@@ -30,24 +32,40 @@ textarea {
 	width: 200px;
 	min-width: 200px;
 	max-width: 200px;
+	
+	border: 1px solid #ccc;
+	padding: 6px;
+}
+
+#run {
+	color: #000;
+	padding: 6px 10px;
+	font-size: 12px;
+	background-color: #e6e6e6;
+	border: 1px solid #d2d2d2;
 }
 
 #string {
 	width: 200px;
+	
+	border: 1px solid #ccc;
+	padding: 6px;
 }
 
 #control {
 	padding: 10px;
 	margin: 10px;
-	background: gray;
+	background: #fff;
 	float: left;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 #table_div {
 	padding: 10px;
 	margin: 10px;
-	background: gray;
+	background: #fff;
 	float: left;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 #table {
@@ -55,7 +73,7 @@ textarea {
 }
 
 th {
-	border: 1px solid black;
+	border: 1px solid #515151;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
