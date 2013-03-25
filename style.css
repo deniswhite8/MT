@@ -12,7 +12,13 @@ td {
 }
 
 .focus {
-	border: 5px dashed #000;
+	border: 5px dashed #000 !important;
+	padding: 5px !important;
+}
+
+span {
+	border-bottom: 1px dotted #000;
+	cursor: pointer;
 }
 
 #tape {

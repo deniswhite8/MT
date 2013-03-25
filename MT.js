@@ -204,4 +204,23 @@ $(document).ready(function(){
 		table.append(str);
 	}
 	
+	
+	$("#lenta").mouseenter(function(){$("#tape").addClass("focus");});
+	$("#lenta").mouseleave(function(){$("#tape").removeClass("focus");});
+	
+	$("#yy").mouseenter(function(){$("#control").addClass("focus");});
+	$("#yy").mouseleave(function(){$("#control").removeClass("focus");});
+	
+	$("#tblc").mouseenter(function(){$("#table_div").addClass("focus");});
+	$("#tblc").mouseleave(function(){$("#table_div").removeClass("focus");});
+	
+	$("#z").mouseenter(function(){$("#string").addClass("focus");});
+	$("#z").mouseleave(function(){$("#string").removeClass("focus");});
+	
+	$("#k").mouseenter(function(){$("#commands").addClass("focus");});
+	$("#k").mouseleave(function(){$("#commands").removeClass("focus");});
+	
+	$("#btn").mouseenter(function(){$("#run").addClass("focus");});
+	$("#btn").mouseleave(function(){$("#run").removeClass("focus");});
+	
 });
