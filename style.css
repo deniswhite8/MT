@@ -1,15 +1,18 @@
 body {
-	background: #e6e6e6; /*url(black-stripe.gif) #282828;*/
-	color: #515151;
+	background: #e6e6e6;
+	color: #000;
 }
 
 td {
-	border: 1px solid #515151;
+	border: 1px solid #000;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
-	background: white;
 	padding: 3px;
+}
+
+.focus {
+	border: 5px dashed #000;
 }
 
 #tape {
@@ -21,8 +24,8 @@ td {
 }
 
 .selected {
-	background-color: #515151;
-	color: white;
+	background-color: #464646;
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -60,6 +63,15 @@ textarea {
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 }
 
+#help {
+	padding: 20px;
+	margin: 10px;
+	background: #fff;
+	float: right;
+	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	width: 500px;
+}
+
 #table_div {
 	padding: 10px;
 	margin: 10px;
@@ -73,11 +85,14 @@ textarea {
 }
 
 th {
-	border: 1px solid #515151;
+	border: 1px solid #000;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
-	background: white;
 	font-weight: bold;
 	padding: 3px;
+}
+
+h2 {
+	margin-top: 0;
 }

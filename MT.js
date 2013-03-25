@@ -2,7 +2,7 @@ var head = 1;
 var map = {};
 var state = 0;
 var running = false;
-var delay = 50;
+var delay = 500;
 
 $(document).ready(function(){
 
