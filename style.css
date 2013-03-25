@@ -1,9 +1,14 @@
+body {
+	background: url(black-stripe.gif) #282828;
+}
+
 td {
-	background-color: #ddd;
 	border: 1px solid black;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
+	background: white;
+	padding: 3px;
 }
 
 #tape {
@@ -14,7 +19,9 @@ td {
 }
 
 .selected {
-	background-color: red;
+	background-color: black;
+	color: white;
+	font-weight: bold;
 }
 
 textarea {
@@ -41,4 +48,18 @@ textarea {
 	margin: 10px;
 	background: gray;
 	float: left;
+}
+
+#table {
+	border-collapse: collapse;
+}
+
+th {
+	border: 1px solid black;
+	min-width: 20px;
+	min-height: 20px;
+	text-align: center;
+	background: white;
+	font-weight: bold;
+	padding: 3px;
 }

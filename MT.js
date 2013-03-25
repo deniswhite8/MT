@@ -2,13 +2,14 @@ var head = 1;
 var map = {};
 var state = 0;
 var running = false;
-var delay = 500;
+var delay = 50;
 
 $(document).ready(function(){
 
 	var row = $("#row");
 	row.children().eq(head).addClass("selected");
 	var table = $("#table");
+	var tape = $("#tape");
 	
 	$("#string").keyup(init);
 	init();
@@ -31,6 +32,8 @@ $(document).ready(function(){
 		row.append("<td>...</td>");
 		
 		row.children().eq(head).addClass("selected");
+		
+		if(!check()) createTable();
 	}
 	
 	function reset()
@@ -50,39 +53,8 @@ $(document).ready(function(){
 		}
 		else
 		{
-			var ins = false;
-			var commands = $("#commands").val().replace(/ /g,'').split("\n");
-			for(var i = 0; i < commands.length; i++)
-			{
-				if(commands[i] == "") continue;
-				
-				ins = true;
-				
-				if(!(/^q\d+\S->q([z]|[\d]+)\S[RLE]$/.test(commands[i])))
-				{
-					alert("incorrect instruction: " + commands[i]);
-					return;
-				}
-				
-				var mas = commands[i].split("->");
-
-				var move1 = mas[1][mas[1].length-1];
-				mas[1] = mas[1].substr(0, mas[1].length-1);
-		
-				var ch1 = mas[1][mas[1].length-1];
-				mas[1] = mas[1].substr(0, mas[1].length-1);
-		
-				mas[1] = mas[1].substr(1);
-				var n1 = mas[1];
-			
-				map[mas[0]] = {n:n1, ch:ch1, move:move1};
-			}
-			
-			if(!ins) 
-			{
-				alert("Not given instructions!");
-				return;
-			}
+			map = {};
+			if(check()) return;
 			createTable();
 			running = true;
 			$("#ok").attr("disabled", "disabled");
@@ -94,6 +66,49 @@ $(document).ready(function(){
 		}
 		
 	});
+	
+	function check()
+	{
+		var ins = false;
+		var commands = $("#commands").val().replace(/ /g,'').split("\n");
+		for(var i = 0; i < commands.length; i++)
+		{
+			if(commands[i] == "") continue;
+			
+			ins = true;
+			
+			if(!(/^q\d+\S->q([z]|[\d]+)\S[RLE]$/.test(commands[i])))
+			{
+				alert("incorrect instruction: " + commands[i]);
+				return 1;
+			}
+			
+			var mas = commands[i].split("->");
+
+			var move1 = mas[1][mas[1].length-1];
+			mas[1] = mas[1].substr(0, mas[1].length-1);
+	
+			var ch1 = mas[1][mas[1].length-1];
+			mas[1] = mas[1].substr(0, mas[1].length-1);
+	
+			mas[1] = mas[1].substr(1);
+			var n1 = mas[1];
+		
+			if(map[mas[0]] === undefined) map[mas[0]] = {n:n1, ch:ch1, move:move1};
+			else
+			{
+				alert("Repeat for: " + mas[0]);
+				return 1;
+			}
+		}
+		
+		if(!ins) 
+		{
+			alert("Not given instructions!");
+			return 1;
+		}
+		return 0;
+	}
 	
 	function run()
 	{
