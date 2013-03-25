@@ -69,7 +69,7 @@ $(document).ready(function(){
 	function check()
 	{
 		var ins = false;
-		var commands = $("#commands").val().replace(/ /g,'').split("\n");
+		var commands = $("#commands").val().replace(/^\s+|\s+$/g, '').split("\n");
 		for(var i = 0; i < commands.length; i++)
 		{
 			if(commands[i] == "") continue;
@@ -113,8 +113,7 @@ $(document).ready(function(){
 	{
 		if(state != "z" && running)
 		{
-			step();
-			setTimeout(run, delay);
+			if(!step()) setTimeout(run, delay);
 		}
 		else if(state == "z")
 		{
@@ -127,7 +126,11 @@ $(document).ready(function(){
 		var maxWidth = tape[0].scrollWidth - tape[0].clientWidth + 100;
 		var ch = row.children().eq(head).text();
 		var next = map["q"+state+ch];
-		if(next === undefined) alert("Not next instruction!");
+		if(next === undefined)
+		{
+			alert("Not next instruction!");
+			return 1;
+		}
 		state = next.n;
 		row.children().eq(head).text(next.ch);
 		row.children().eq(head).removeClass("selected");
@@ -149,6 +152,7 @@ $(document).ready(function(){
 		}
 		
 		row.children().eq(head).addClass("selected");
+		return 0;
 	}
 	
 	function createTable()
