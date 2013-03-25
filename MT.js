@@ -8,8 +8,9 @@ $(document).ready(function(){
 
 	var row = $("#row");
 	row.children().eq(head).addClass("selected");
+	var table = $("#table");
 	
-	$("#ok").click(init);
+	$("#string").keyup(init);
 	init();
 	function init()
 	{
@@ -82,7 +83,7 @@ $(document).ready(function(){
 				alert("Not given instructions!");
 				return;
 			}
-			
+			createTable();
 			running = true;
 			$("#ok").attr("disabled", "disabled");
 			$("#string").attr("disabled", "disabled");
@@ -129,9 +130,63 @@ $(document).ready(function(){
 				head = 2;
 			}
 		}
-		else if(next.move != "E") alert("R, L or E!");
 		
 		row.children().eq(head).addClass("selected");
+	}
+	
+	function createTable()
+	{
+		table.empty();
+		var _q = [], _c = [], q = [], c = [];
+		for(var key in map)
+		{
+			var str = key.substr(1);
+			_c.push(str[str.length-1]);
+			_q.push(str.substr(0, str.length-1));
+		}
+		_q.sort(function(a,b){return parseInt(a)-parseInt(b)});
+		_c.sort();
+		
+		var old = -1;
+		for(var i = 0; i < _q.length; i++)
+		{
+			if(_q[i] != old)
+			{
+				q.push(_q[i]);
+				old = _q[i];
+			}
+		}
+		q.push("z");
+		old = -1;
+		for(var i = 0; i < _c.length; i++)
+		{
+			if(_c[i] != old)
+			{
+				c.push(_c[i]);
+				old = _c[i];
+			}
+		}
+		
+		var str = "<tr><th></th>";
+		for(var i = 0; i < c.length; i++)
+		{
+			str += "<th>" + c[i] + "</th>"
+		}
+		str += "</tr>";
+		
+		for(var i = 0; i < q.length; i++)
+		{
+			str += "<tr><th>q" + q[i] + "</th>";
+			for(var j = 0; j < c.length; j++)
+			{
+				var obj = map["q"+q[i]+c[j]];
+				if(obj !== undefined) str += "<td>q" + obj.n + "" + obj.ch + "" + obj.move + "</td>"
+				else str += "<td></td>"
+			}
+			str += "</tr>";
+		}
+		
+		table.append(str);
 	}
 	
 });
