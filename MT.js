@@ -124,6 +124,8 @@ $(document).ready(function(){
 	function step()
 	{
 		var maxWidth = tape[0].scrollWidth - tape[0].clientWidth + 100;
+		var count = row.children().length;
+		
 		var ch = row.children().eq(head).text();
 		var next = map["q"+state+ch];
 		if(next === undefined)
@@ -138,7 +140,6 @@ $(document).ready(function(){
 		{
 			head++;
 			if(head == row.children().length-2) row.children().eq(head).after("<td>&lambda;</td>");
-			tape.scrollLeft(maxWidth);
 		}
 		else if(next.move == "L")
 		{
@@ -148,8 +149,9 @@ $(document).ready(function(){
 				row.children().eq(head).before("<td>&lambda;</td>");
 				head = 2;
 			}
-			tape.scrollLeft(0);
 		}
+		
+		tape.scrollLeft(head/count*maxWidth);
 		
 		row.children().eq(head).addClass("selected");
 		return 0;
