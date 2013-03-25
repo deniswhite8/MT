@@ -4,16 +4,26 @@ body {
 }
 
 td {
-	border: 1px solid #000;
+	border: 1px solid #ccc;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
 	padding: 3px;
 }
 
-.focus {
+.focus_div {
 	border: 5px dashed #000 !important;
 	padding: 5px !important;
+}
+
+.focus_text {
+	border: 5px dashed #000 !important;
+	padding: 2px !important;
+}
+
+.focus_run {
+	border: 5px dashed #000 !important;
+	padding: 2px 5px !important;
 }
 
 span {
@@ -30,10 +40,13 @@ span {
 }
 
 .selected {
-	background-color: #464646;
-	color: #fff;
+	/*background-color: #464646;*/
+	/*color: #fff;*/
 	font-weight: bold;
+	border: 3px solid #464646;
+	background-color: #e6e6e6;
 }
+
 
 textarea {
 	display: block;
@@ -91,7 +104,7 @@ textarea {
 }
 
 th {
-	border: 1px solid #000;
+	border: 1px solid #ccc;
 	min-width: 20px;
 	min-height: 20px;
 	text-align: center;
