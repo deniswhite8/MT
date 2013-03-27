@@ -10,6 +10,7 @@ $(document).ready(function(){
 	row.children().eq(head).addClass("selected");
 	var table = $("#table");
 	var tape = $("#tape");
+	var cur_state = $("#cur_state");
 	
 	$("#string").keyup(init);
 	init();
@@ -33,6 +34,7 @@ $(document).ready(function(){
 		row.append("<td>...</td>");
 		
 		row.children().eq(head).addClass("selected");
+		cur_state.text("q"+state);
 	}
 	
 	function reset()
@@ -154,6 +156,7 @@ $(document).ready(function(){
 		tape.scrollLeft(head/count*maxWidth);
 		
 		row.children().eq(head).addClass("selected");
+		cur_state.text("q"+state);
 		return 0;
 	}
 	
