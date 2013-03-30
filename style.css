@@ -1,5 +1,5 @@
 body {
-	background: #e6e6e6;
+	background: #e6e6e6 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAMAAADjcdz2AAAAZlBMVEXV1dXW1tbX19jY2Njb29rc3Nvc3Nzc3dze3t3e3t7f39/g4N/g4ODh4eDh4eHh4eLh4uHi4uHj4+Pj5OPk5OPk5OTk5eTl5eTl5eXl5uXm5ubm5ufm5+bn5+bn5+fn6Ofo6Ofo6OhY5WpOAAAAiElEQVQY002Q4RICIQiEua6sM7OyLKLc4v1fsks9bf8wfLPADgTcGZoFvgEEiGiVSAbQppRBsS+FSo3OcTFlAD8SmdhB3Jj9bm2xAIQD4xWcNMA835Jr6jvm+0DqO/SNFodqpBaP5C/ob5iMl96LNzSMtnlgVwP5qUZU/cTtdCThc1j+cTk9nl9cfh4JmnWJ9wAAAABJRU5ErkJggg==) repeat;
 	color: #000;
 }
 
@@ -37,6 +37,7 @@ span.help {
     padding: 10px;
 	margin: 10px;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	border-radius: 10px;
 }
 
 .selected {
@@ -84,6 +85,7 @@ p {
 	background: #fff;
 	float: left;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	border-radius: 10px;
 }
 
 #help {
@@ -93,6 +95,7 @@ p {
 	float: right;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	width: 500px;
+	border-radius: 10px;
 }
 
 #table_div {
@@ -101,6 +104,7 @@ p {
 	background: #fff;
 	float: left;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	border-radius: 10px;
 }
 
 #table {
