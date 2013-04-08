@@ -11,7 +11,8 @@ $(document).ready(function(){
 	var table = $("#table");
 	var tape = $("#tape");
 	var cur_state = $("#cur_state");
-	
+
+
 	$("#string").keyup(init);
 	init();
 	if(!check()) createTable();
