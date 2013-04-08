@@ -216,22 +216,22 @@ $(document).ready(function(){
 	}
 	
 	
-	$("#lenta").mouseenter(function(){$("#tape").addClass("focus_div");});
-	$("#lenta").mouseleave(function(){$("#tape").removeClass("focus_div");});
+	// $("#lenta").mouseenter(function(){$("#tape").addClass("focus_div");});
+	// $("#lenta").mouseleave(function(){$("#tape").removeClass("focus_div");});
 	
-	$("#yy").mouseenter(function(){$("#control").addClass("focus_div");});
-	$("#yy").mouseleave(function(){$("#control").removeClass("focus_div");});
+	// $("#yy").mouseenter(function(){$("#control").addClass("focus_div");});
+	// $("#yy").mouseleave(function(){$("#control").removeClass("focus_div");});
 	
-	$("#tblc").mouseenter(function(){$("#table_div").addClass("focus_div");});
-	$("#tblc").mouseleave(function(){$("#table_div").removeClass("focus_div");});
+	// $("#tblc").mouseenter(function(){$("#table_div").addClass("focus_div");});
+	// $("#tblc").mouseleave(function(){$("#table_div").removeClass("focus_div");});
 	
-	$("#z").mouseenter(function(){$("#string").addClass("focus_text");});
-	$("#z").mouseleave(function(){$("#string").removeClass("focus_text");});
+	// $("#z").mouseenter(function(){$("#string").addClass("focus_text");});
+	// $("#z").mouseleave(function(){$("#string").removeClass("focus_text");});
 	
-	$("#k").mouseenter(function(){$("#commands").addClass("focus_text");});
-	$("#k").mouseleave(function(){$("#commands").removeClass("focus_text");});
+	// $("#k").mouseenter(function(){$("#commands").addClass("focus_text");});
+	// $("#k").mouseleave(function(){$("#commands").removeClass("focus_text");});
 	
-	$("#btn").mouseenter(function(){$("#run").addClass("focus_run");});
-	$("#btn").mouseleave(function(){$("#run").removeClass("focus_run");});
+	// $("#btn").mouseenter(function(){$("#run").addClass("focus_run");});
+	// $("#btn").mouseleave(function(){$("#run").removeClass("focus_run");});
 	
 });

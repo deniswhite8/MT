@@ -13,7 +13,7 @@ td {
 	padding: 3px;
 }
 
-.focus_div {
+/*.focus_div {
 	border: 5px dashed #000 !important;
 	padding: 5px !important;
 }
@@ -31,7 +31,7 @@ td {
 span.help {
 	border-bottom: 1px dotted #000;
 	cursor: pointer;
-}
+}*/
 
 #tape {
 	overflow: auto;
@@ -90,7 +90,7 @@ p {
 	float: left;
 }
 
-#help {
+/*#help {
 	padding: 20px;
 	margin: 10px;
 	background: #fff;
@@ -98,7 +98,7 @@ p {
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
 	width: 500px;
 	border-radius: 10px;
-}
+}*/
 
 #table_div {
 	padding: 10px;
@@ -122,6 +122,6 @@ th {
 	padding: 3px;
 }
 
-h2 {
+/*h2 {
 	margin-top: 0;
-}
+}*/
